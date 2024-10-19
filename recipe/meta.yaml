@@ -10,21 +10,24 @@ source:
   sha256: c2beccd6a07bd557d04a7c72a7a8ff8508a2d7d7c33527964a39318204dbebfd
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
 
 requirements:
   host:
     - python >=3.10
+    - setuptools >=65.4.0
+    - setuptools-scm >=7.0.5
     - pip
-    - setuptools
   run:
     - python >=3.10
     - moab >=5.3.0
     - gmsh
     - python-gmsh
     - cadquery >=2.4.0
+    - numpy <=1.23.5
     - ocp >=7.7.2
     - trimesh
     - networkx
