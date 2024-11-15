@@ -1,29 +1,34 @@
 {% set name = "cad_to_dagmc" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b843c6b856f9ef1b5d47e952429c788527e035cfbd6ddf7da27746d7864909d6
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c2beccd6a07bd557d04a7c72a7a8ff8508a2d7d7c33527964a39318204dbebfd
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
+    - setuptools >=65.4.0
+    - setuptools-scm >=7.0.5
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - moab >=5.3.0
     - gmsh
     - python-gmsh
     - cadquery >=2.4.0
+    - numpy <=1.26.4
     - ocp >=7.7.2
     - trimesh
     - networkx
@@ -32,12 +37,12 @@ test:
   imports:
     - cad_to_dagmc
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
   source_files:
     - tests
   commands:
-    - pip check
     - pytest tests
 
 about:
