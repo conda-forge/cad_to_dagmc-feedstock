@@ -27,7 +27,7 @@ requirements:
     - gmsh
     - python-gmsh
     - cadquery >=2.4.0
-    - numpy <=1.23.5
+    - numpy <=1.26.4
     - ocp >=7.7.2
     - trimesh
     - networkx
