@@ -1,5 +1,6 @@
 {% set name = "cad_to_dagmc" %}
 {% set version = "0.7.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -17,12 +18,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools >=65.4.0
     - setuptools-scm >=7.0.5
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - moab >=5.3.0
     - gmsh
     - python-gmsh
@@ -36,6 +37,7 @@ test:
   imports:
     - cad_to_dagmc
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
   source_files:
