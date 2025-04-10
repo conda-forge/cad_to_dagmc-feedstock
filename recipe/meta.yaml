@@ -48,7 +48,7 @@ test:
     # this test needs openmc
     #- pytest tests/test_get_volumes.py
     - pytest tests/test_h5m_in_transport.py
-    - pytest ests/test_loading_from_file_vs_shape_object.py
+    - pytest tests/test_loading_from_file_vs_shape_object.py
     # TODO add this test but it requires assembly-mesh-plugio - 
     # if assembly-mesh-plugio gets packaged on conda-forge test all file
     # pytest tests/test_mesh_to_dagmc.py
