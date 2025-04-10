@@ -1,5 +1,5 @@
 {% set name = "cad_to_dagmc" %}
-{% set version = "0.8.2" %}
+{% set version = "0.9.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5487f3172f8b8bd765492c6748bebc9baa295e86f30a673d1f420136efa6ae78
+  sha256: fd37b7818cbd8bfb8a56f08aede4334481baf67073a41e256ba242b96858d517
 
 build:
   noarch: python
@@ -43,7 +43,17 @@ test:
   source_files:
     - tests
   commands:
-    - pytest tests
+    - pytest tests/test_file_creation.py
+    # TODO add this test but it requires openmc
+    # this test needs openmc
+    #- pytest tests/test_get_volumes.py
+    - pytest tests/test_h5m_in_transport.py
+    - pytest tests/test_loading_from_file_vs_shape_object.py
+    # TODO add this test but it requires assembly-mesh-plugio - 
+    # if assembly-mesh-plugio gets packaged on conda-forge test all file
+    # pytest tests/test_mesh_to_dagmc.py
+    - pytest tests/test_python_api.py
+    - pytest tests/test_version.py
 
 about:
   home: https://github.com/fusion-energy/cad_to_dagmc
