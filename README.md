@@ -30,7 +30,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-cad_to_dagmc-green.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cad_to_dagmc.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cad_to_dagmc.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cad_to_dagmc.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cad__to__dagmc-green.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cad_to_dagmc.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cad_to_dagmc.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cad_to_dagmc.svg)](https://anaconda.org/conda-forge/cad_to_dagmc) |
 
 Installing cad_to_dagmc
 =======================
