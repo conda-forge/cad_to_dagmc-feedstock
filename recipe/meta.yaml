@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 
 requirements:
@@ -29,7 +29,11 @@ requirements:
     - gmsh
     - python-gmsh  
     - h5py
-    - moab >=5.3.0
+    # TODO consider moving from a noarch package so that we can do
+    # - moab >=5.3.0  [not win]
+    # this is not possible with a noarch package
+    # Therefore moab backend is removed as it prevents installation on windows
+    # - moab >=5.3.0 
     - ocp >=7.7.2
     - trimesh
     - networkx
