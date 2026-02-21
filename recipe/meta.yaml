@@ -1,5 +1,5 @@
 {% set name = "cad_to_dagmc" %}
-{% set version = "0.11.2" %}
+{% set version = "0.11.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c5d625250027da0b00f4f1d44540871e6f2b5ed53c2394040078857a324f2490
+  sha256: b7e590dac31624756c23a736b1c0b1342d6fcf588cb035eb164ce32161dba921
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
     - cadquery >=2.6.0
     - numpy <=1.26.4
     - gmsh
-    - python-gmsh  
+    - python-gmsh
     - h5py
     # TODO consider moving from a noarch package so that we can do
     # - moab >=5.3.0  [not win]
