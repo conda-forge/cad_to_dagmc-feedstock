@@ -1,5 +1,5 @@
 {% set name = "cad_to_dagmc" %}
-{% set version = "0.11.9" %}
+{% set version = "0.12.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 55105a481faecf8498b3dcc18fb24dadf5d5e38a059233029d4bacef0d776cb5
+  sha256: 0bcda8df665dac2914ce9474d164863023d4315a0e8b95c6445ce6ebd3f042fc
 
 build:
   noarch: python
