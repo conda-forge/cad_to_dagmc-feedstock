@@ -1,6 +1,6 @@
 {% set name = "cad_to_dagmc" %}
-{% set version = "0.11.9" %}
-{% set python_min = "3.10" %}
+{% set version = "0.12.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 55105a481faecf8498b3dcc18fb24dadf5d5e38a059233029d4bacef0d776cb5
+  sha256: 0bcda8df665dac2914ce9474d164863023d4315a0e8b95c6445ce6ebd3f042fc
 
 build:
   noarch: python
@@ -24,11 +24,16 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - cadquery >=2.6.0
-    - numpy <=1.26.4
+    - cadquery >=2.8.0
+    - cadquery-direct-mesh-plugin >=0.2.0
+    - numpy
     - gmsh
     - python-gmsh
     - h5py
+    # TODO add the cad-to-dagmc-mesher backend once the package is available
+    # on conda-forge. Until then tests/conftest.py skips the tests that use
+    # the cad-to-dagmc-mesher meshing backend
+    # - cad-to-dagmc-mesher >=0.1.7
     # TODO consider moving from a noarch package so that we can do
     # - moab >=5.3.0  [not win]
     # this is not possible with a noarch package
