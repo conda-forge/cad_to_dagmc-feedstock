@@ -1,6 +1,6 @@
 {% set name = "cad_to_dagmc" %}
 {% set version = "0.12.2" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -25,10 +25,11 @@ requirements:
   run:
     - python >={{ python_min }}
     - cadquery >=2.6.0
-    - numpy <=1.26.4
+    - numpy
     - gmsh
     - python-gmsh
     - h5py
+    - cadquery-direct-mesh-plugin >=0.2.0
     # TODO consider moving from a noarch package so that we can do
     # - moab >=5.3.0  [not win]
     # this is not possible with a noarch package
