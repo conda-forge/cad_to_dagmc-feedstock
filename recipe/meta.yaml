@@ -1,5 +1,5 @@
 {% set name = "cad_to_dagmc" %}
-{% set version = "0.14.3" %}
+{% set version = "0.14.4" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 18ef6fd45580779ac4530a37d50818ea00d473d40b752686fb7e9f9c5133f0e3
+  sha256: f4274d162f3d34ecde5a758e75d04f3ef88ee2b1360ebba408e678cd102330cf
 
 build:
   noarch: python
