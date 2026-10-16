@@ -25,7 +25,6 @@ requirements:
   run:
     - python >={{ python_min }}
     - cadquery >=2.8.0
-    - cadquery-direct-mesh-plugin >=0.2.0
     - numpy
     - gmsh
     - python-gmsh
@@ -33,7 +32,7 @@ requirements:
     # TODO add the cad-to-dagmc-mesher backend once the package is available
     # on conda-forge. Until then tests/conftest.py skips the tests that use
     # the cad-to-dagmc-mesher meshing backend
-    # - cad-to-dagmc-mesher >=0.1.7
+    # - cad-to-dagmc-mesher ==0.3.6
     # TODO consider moving from a noarch package so that we can do
     # - moab >=5.3.0  [not win]
     # this is not possible with a noarch package
